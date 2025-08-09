@@ -2,7 +2,7 @@ name: Ping Render Root Route
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  
+    - cron: '*/15 * * * *'
   push:
     branches:
       - main
@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping root route of Render backend
-        run: curl -f https://kante-ecommerce.onrender.com/
+        run: |
+          echo "Pinging Render backend..."
+          curl -v https://kante-ecommerce.onrender.com/ || exit 1
