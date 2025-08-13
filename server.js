@@ -84,11 +84,11 @@ app.get('/', (req, res) => {
   res.send('WELCOME TO ECOMMERCE PERFUME API');
 });
 
+// ping 
 app.get('/ping', (req, res) => {
   console.log(`Ping from cron-job.org at ${new Date().toISOString()}`);
-  res.send('Pong');
+  res.status(200)
 });
-
 
 
 // User Management 
